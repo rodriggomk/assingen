@@ -11,8 +11,7 @@
             <td style="display: flex;">
               <div style="margin-left: 10px; display: flex; flex-direction: column; margin-top: 8px;">
                 <label>
-                  <!-- <nuxt-img quality="90" width="92" height="92" :style="`border-radius: 120px; border: 4px solid ${color};`" :src="avatar ? avatar : '/file-upload.png'" /> -->
-                  <img width="92" height="92" :style="`border-radius: 120px; border: 4px solid ${color};`" :src="avatar ? avatar : fileUpload">
+                  <img width="92" height="92" :style="`border-radius: 120px; border: 4px solid ${color};`" :src="avatar ? avatar : fileUpload" alt="">
                   <input type="file" id="file-upload" @change="uploadFile" hidden>
                 </label>
                 <a href="https://marknet.com.br" target="_blank" style="margin-top: 15px; margin-bottom: 8px;">
@@ -101,7 +100,7 @@
 
 <script>
 import { mask } from 'vue-the-mask'
-import FileUpload from '@/static/file-upload.png'
+import FileUpload from './../static/file-upload.png'
 export default {
   name: 'IndexPage',
   directives: { mask },
