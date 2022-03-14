@@ -11,7 +11,8 @@
             <td style="display: flex;">
               <div style="margin-left: 10px; display: flex; flex-direction: column; margin-top: 8px;">
                 <label>
-                  <img width="92" height="92" :style="`border-radius: 120px; border: 4px solid ${color};`" :src="avatar ? avatar : fileUpload" alt="">
+                  <!-- <nuxt-img quality="90" width="92" height="92" :style="`border-radius: 120px; border: 4px solid ${color};`" :src="avatar ? avatar : '/file-upload.png'" /> -->
+                  <img width="92" height="92" :style="`border-radius: 120px; border: 4px solid ${color};`" :src="avatar ? avatar : fileUpload">
                   <input type="file" id="file-upload" @change="uploadFile" hidden>
                 </label>
                 <a href="https://marknet.com.br" target="_blank" style="margin-top: 15px; margin-bottom: 8px;">
@@ -70,7 +71,7 @@
                   <p style="margin: 0;">
                     <span style="display: inline-block; width: 40px; font-size: 10px; text-transform: uppercase; font-weight: light;">Phone:</span>
                     <span style="text-decoration: none; color: #AF1EFC; font-size: 14px;" href="#tel:44998370204">
-                      <input v-mask="'## - 9 ########'" placeholder="Seu telefone aqui" :style="`border: none; outline: none; color: ${color}; font-size: 14px;`" v-model="phone" type="text">
+                      <input v-mask="'## - #########'" placeholder="Seu telefone aqui" :style="`border: none; outline: none; color: ${color}; font-size: 14px;`" v-model="phone" type="text">
                       <!-- 44 - 9 9837-0204 -->
                     </span>
                   </p>
@@ -100,7 +101,7 @@
 
 <script>
 import { mask } from 'vue-the-mask'
-import FileUpload from './../static/file-upload.png'
+import FileUpload from '@/static/file-upload.png'
 export default {
   name: 'IndexPage',
   directives: { mask },
