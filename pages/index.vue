@@ -311,6 +311,8 @@ export default {
 .avatar {
   border-radius: 100%;
   border: 4px solid var(--primary);
+  object-fit: cover;
+  object-position: top;
 }
 
 .signature {
