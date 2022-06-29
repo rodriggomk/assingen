@@ -141,7 +141,8 @@ export default {
 
     <div class="border-content" id="signature">
       <div class="profile">
-        <img :class="`${avatar ? 'avatar' : '' }`" :src="avatar ? avatar : defaultAvatar" alt="Avatar" width="82" height="82">
+        <!-- <img :class="`${avatar ? 'avatar' : '' }`" :src="avatar ? avatar : defaultAvatar" alt="Avatar" width="82" height="82"> -->
+        <div :style="`background-image: url(${avatar ? avatar : defaultAvatar});`" class="avatar"></div>
         <img :src="marknetBrand" alt="Avatar" width="86">
         <span class="url-site">www.marknet.com.br</span>
       </div>
@@ -313,6 +314,11 @@ export default {
   border: 4px solid var(--primary);
   object-fit: cover;
   object-position: top;
+  background-size: cover;
+  background-position: center;
+  width: 82px;
+  height: 82px;
+  background-repeat: no-repeat;
 }
 
 .signature {
